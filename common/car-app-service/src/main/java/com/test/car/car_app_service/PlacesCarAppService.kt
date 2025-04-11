@@ -5,6 +5,7 @@ import androidx.car.app.CarAppService
 import androidx.car.app.Screen
 import androidx.car.app.Session
 import androidx.car.app.validation.HostValidator
+import com.test.car.car_app_service.screen.MainScreen
 
 
 /**
@@ -13,16 +14,16 @@ import androidx.car.app.validation.HostValidator
 
 class PlacesCarAppService : CarAppService() {
     override fun createHostValidator(): HostValidator {
-        TODO("Not yet implemented")
+        return HostValidator.ALLOW_ALL_HOSTS_VALIDATOR
     }
 
-//    override fun onCreateSession(): Session {
-////        return PlacesSession()
-//    }
+    override fun onCreateSession(): Session {
+        return PlacesSession()
+    }
 }
-//
-//class PlacesSession: Session() {
-//    override fun onCreateScreen(intent: Intent): Screen {
-////        return MainScreen(carContext)
-//    }
-//}
+
+class PlacesSession: Session() {
+    override fun onCreateScreen(intent: Intent): Screen {
+        return MainScreen(carContext)
+    }
+}

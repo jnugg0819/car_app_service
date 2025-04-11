@@ -2,9 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application>
+        <meta-data
+            android:name="androidx.car.app.minCarApiLevel"
+            android:value="1"
+            />
         <service
             android:name="com.test.car.car_app_service.PlacesCarAppService"
-            android:permission="android.permission.BIND_CAR_APP_SERVICE"
             android:exported="true">
 
             <intent-filter>
@@ -12,7 +15,5 @@
                 <category android:name="androidx.car.app.category.POI" />
             </intent-filter>
         </service>
-
-
     </application>
 </manifest>
