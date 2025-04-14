@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="androidx.car.app.MAP_TEMPLATES" />
     <application>
         <meta-data
             android:name="androidx.car.app.minCarApiLevel"
@@ -11,7 +12,10 @@
             android:exported="true">
 
             <intent-filter>
+                <!--CarAppService action과 POI 카테고리를 설정함으로서 안드로이드 시스템에게 이서비스가 자동차 앱 서비스임을 알려줍니다.-->
                 <action android:name="androidx.car.app.CarAppService" />
+                <!--카테고리는 꼭 넣어줘야됨 안드로이드 시스템이 앱의 목적을 정확히 파악 불가. 넣지 않으면 PlayStore거절 가능-->
+                <!--Android Auto, Android Automotive OS앱은 특정 카테고리만 허용 현재 허용 카테고리 POI, Navigation, IOT-->
                 <category android:name="androidx.car.app.category.POI" />
             </intent-filter>
         </service>
