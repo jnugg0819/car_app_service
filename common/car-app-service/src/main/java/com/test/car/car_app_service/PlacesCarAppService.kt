@@ -1,6 +1,7 @@
 package com.test.car.car_app_service
 
 import android.content.Intent
+import android.util.Log
 import androidx.car.app.CarAppService
 import androidx.car.app.Screen
 import androidx.car.app.Session
@@ -24,6 +25,8 @@ class PlacesCarAppService : CarAppService() {
 
 class PlacesSession: Session() {
     override fun onCreateScreen(intent: Intent): Screen {
+        val apiLevel = carContext.carAppApiLevel
+        Log.d("CarAPI", "호스트가 지원하는 API 수준 : ${apiLevel}")
         return MainScreen(carContext)
     }
 }
