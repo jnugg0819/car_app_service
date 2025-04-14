@@ -33,4 +33,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.10.0'
     implementation "androidx.car.app:app:$car_app_library_version"
     implementation project(":common:data")
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-junit:1.8.10'
 }
